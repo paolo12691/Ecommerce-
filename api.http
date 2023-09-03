@@ -1,0 +1,38 @@
+### get all products
+GET https://striveschool-api.herokuapp.com/api/product/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVjZmNiMGM1NGNhODAwMTRhNDVhYzgiLCJpYXQiOjE2OTMyNTI3ODQsImV4cCI6MTY5NDQ2MjM4NH0.SC3MO7ZPvjmTIvlyqb7TiUQFhlObtPeNw4KO1mjOGt0
+
+### get a single product
+GET https://striveschool-api.herokuapp.com/api/product/id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVjZmNiMGM1NGNhODAwMTRhNDVhYzgiLCJpYXQiOjE2OTMyNTI3ODQsImV4cCI6MTY5NDQ2MjM4NH0.SC3MO7ZPvjmTIvlyqb7TiUQFhlObtPeNw4KO1mjOGt0
+
+### create a new product
+POST https://striveschool-api.herokuapp.com/api/product/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVjZmNiMGM1NGNhODAwMTRhNDVhYzgiLCJpYXQiOjE2OTMyNTI3ODQsImV4cCI6MTY5NDQ2MjM4NH0.SC3MO7ZPvjmTIvlyqb7TiUQFhlObtPeNw4KO1mjOGt0
+Content-Type: application/json
+
+{   
+    "name": "Emperor of Lightning",
+    "description":"This card cannot be Special Summoned. This card must be Tribute Summoned by Tributing 3 Thunder-Type monsters on your side of the field. If this card attacks your opponent's Life Points directly and makes them 0, the controller of this card wins the Match.",
+    "brand": "Yu-gi-oh!",
+    "imageUrl": "https://images.ygoprodeck.com/images/cards/501000007.jpg",
+    "price": 10
+}
+
+### edit a product
+PUT https://striveschool-api.herokuapp.com/api/product/id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVjZmNiMGM1NGNhODAwMTRhNDVhYzgiLCJpYXQiOjE2OTMyNTI3ODQsImV4cCI6MTY5NDQ2MjM4NH0.SC3MO7ZPvjmTIvlyqb7TiUQFhlObtPeNw4KO1mjOGt0
+Content-Type: application/json
+
+{   
+    "name": "test",
+    "description":"test",
+    "brand": "test",
+    "imageUrl": "test",
+    "price": 10
+}
+
+### delete a product
+DELETE https://striveschool-api.herokuapp.com/api/product/64ec74193c44e90014a75ebd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVjZmNiMGM1NGNhODAwMTRhNDVhYzgiLCJpYXQiOjE2OTMyNTI3ODQsImV4cCI6MTY5NDQ2MjM4NH0.SC3MO7ZPvjmTIvlyqb7TiUQFhlObtPeNw4KO1mjOGt0
+

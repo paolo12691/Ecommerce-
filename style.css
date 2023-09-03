@@ -1,0 +1,24 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+h1.display-4 {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  tr.table-primary {
+    color: brown;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+  }
