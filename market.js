@@ -55,14 +55,22 @@ function addToCart(productId, productName, productImageUrl, productPrice) {
 			imageUrl: productImageUrl,
 			quantity: 1
 		};
+
 		localStorage.setItem('cartItems', JSON.stringify(cartItems));
-		alert('Prodotto aggiunto al carrello!');
+		appendAlert('Prodotto aggiunto al carrello!');
 	} else {
 		cartItems[productId].quantity++;
 		localStorage.setItem('cartItems', JSON.stringify(cartItems));
-		alert('Prodotto aggiunto al carrello!');
+		appendAlert('Prodotto aggiunto al carrello!');
 	}
 	updateCartIcon();
+
+	setTimeout(function() {
+		const alertElement = document.querySelector('.alert');
+		if (alertElement) {
+			alertElement.style.display = 'none';
+		}
+	}, 3000); //  3 secondi
 }
 
 function updateCartIcon() {

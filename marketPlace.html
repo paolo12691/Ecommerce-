@@ -46,31 +46,64 @@
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul> -->
-                <div class="ms-auto">
-                    <a href="carrello.html" class="btn btn-outline-primary" onclick="addProduct()"><i
-                            class="bi bi-cart2"></i></a>
-                    <span id="cart-quantity" class="badge bg-secondary">0</span>
-                </div>
+                <a type="button" class="btn btn-primary position-relative ms-auto" href="carrello.html">
+
+                    <i class="bi bi-cart2"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-quantity">
+                        0
+
+                    </span>
+                </a>
             </div>
         </div>
     </nav>
+    <!-- I prodotti verranno aggiunti qui dinamicamente -->
     <div class="container">
-        <div id="alert-container" class="alert alert-success d-none" role="alert"></div>
+
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary" id="liveAlertBtn">Aggiungi al Carrello</button>
+
+        <h1 class="display-4">Lista Prodotti</h1>
+        <div class="container mt-5">
+            <div class="row" id="products-container"> <!-- Il tuo contenuto qui --> </div>
+        </div>
+    </div>
+
+    <!-- <div class="spinner-container">
+            <div id="spinner-row" class="spinner-border" role="status">
+                <span class="visually-hidden">Caricamento...</span>
+            </div>  <div id="alert-container" class="alert alert-success d-none" role="alert"></div>
         <h1 class="display-4">Lista Prodotti</h1>
         <div class="container mt-5">
             <div class="row" id="products-container">
-                <!-- I prodotti verranno aggiunti qui dinamicamente -->
-            </div>
-        </div>
 
-        <!-- <div class="spinner-container">
-            <div id="spinner-row" class="spinner-border" role="status">
-                <span class="visually-hidden">Caricamento...</span>
-            </div>
         </div> -->
     </div>
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <script src="./market.js"></script>
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('La Tua Carta è stata Aggiunta', 'success')
+            })
+        }
+
+    </script>
 </body>
 
 </html>
